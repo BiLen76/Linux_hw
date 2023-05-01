@@ -1,0 +1,35 @@
+#!/bin/bash
+touch /tmp/alena.txt
+echo "Date is $(date +'%D')" >> /tmp/alena.txt
+cat /etc/group | tail -3 | sed 's/user/alena_bilko/g' >> /tmp/alena.txt
+
+echo "done"
+
+
+
+alena@Dunyasha_ MINGW64 ~
+$ ssh -i ~/.ssh/id_rsa ec2-user@linux.telran-edu.de
+Last login: Mon May  1 14:36:09 2023 from ip-046-005-231-031.um12.pools.vodafone-ip.de
+
+       __|  __|_  )
+       _|  (     /   Amazon Linux 2 AMI
+      ___|\___|___|
+
+https://aws.amazon.com/amazon-linux-2/
+[ec2-user@ip-172-31-33-20 ~]$ nano /opt/280223_m/alena_bilko/myscript.sh
+[ec2-user@ip-172-31-33-20 ~]$ cd /opt/280223_m/alena_bilko
+[ec2-user@ip-172-31-33-20 alena_bilko]$ ls
+myscript.sh
+[ec2-user@ip-172-31-33-20 alena_bilko]$ chmod u+x myscript.sh
+[ec2-user@ip-172-31-33-20 alena_bilko]$ ls -l
+total 4
+-rwxrw-r-- 1 ec2-user ec2-user 165 May  1 16:37 myscript.sh
+[ec2-user@ip-172-31-33-20 alena_bilko]$ ./myscript.sh
+done
+[ec2-user@ip-172-31-33-20 alena_bilko]$ cat /tmp/alena.txt
+Date is 05/01/23
+basic_55-56e:x:1006:
+basic_57-58e:x:1007:
+280223:x:1008:
+[ec2-user@ip-172-31-33-20 alena_bilko]$
+
